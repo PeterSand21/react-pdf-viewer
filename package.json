@@ -20,6 +20,15 @@
 	"workspaces": [
 		"packages/*"
 	],
+	"scripts": {
+		"bootstrap": "lerna bootstrap --hoist",
+		"postinstall": "npm run bootstrap",
+		"clean": "lerna run clean",
+		"build": "lerna run build",
+		"dev": "lerna run dev",
+		"lint": "eslint packages/**/*.ts packages/**/*.tsx",
+		"release": "lerna publish from-package"
+	},
 	"devDependencies": {
 		"@rollup/plugin-json": "^4.1.0",
 		"@rollup/plugin-typescript": "^5.0.0",
